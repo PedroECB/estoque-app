@@ -4,13 +4,17 @@
                                                         /* TIPOGRAFIA */
                                                         
 @import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
 
 
 
 
 
-
+.ubuntu-font{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.9em;
+}
 
 .teko-font{
     font-family: 'Teko', sans-serif;
@@ -26,10 +30,12 @@
 }
 
 .text-dark-blue{
-    color: #15337f;
+    color: #15337f !important;
     /* text-shadow: 1px 1px 3px black; */
 }
 
 
-
+.nav-link-text{
+    font-size: 1.3em;
+}
 
