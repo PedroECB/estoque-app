@@ -13,6 +13,8 @@
 
                                         // ROTAS COMUNS
 
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -53,7 +55,7 @@ Route::get('/rotacomregra/{nome}/{n}', function($nome, $n){
     }
 })->where('n','^[0-9]{1,2}');
 
-                                       // ROTAS COM REGRAS  
+                                       // AGRUPAMENTO DE ROTAS  
 
 Route::prefix('/admin')->group(function(){
 
@@ -76,4 +78,56 @@ Route::prefix('/admin')->group(function(){
     Route::get('/new/data/{valor}', function($valor){
         return "Admin/new Data valor 2 ".$valor;
     });
+});
+                                                    // AGRUPAMENTO DE ROTAS
+
+Route::prefix('/app')->group(function () {
+    
+    Route::get('/users', function () {
+        return "APP/USERS";
+    })->name('app.users');
+
+    Route::get('/profile', function(){
+        return "APP/PROFILE";
+    })->name('app.profile');
+});
+
+                                                        // REDIRECT
+
+
+// Route::redirect('URI', 'URI', 301);
+
+Route::get('/algumarota', function(){
+    return redirect()->route('nameRoute');
+});
+
+
+
+                                                    // MÉTODOS HTTP
+
+Route::get('/api', function(){
+
+    $pessoa = ["nome"=>"Pedro Henrique", "idade"=>"22", "nascimento"=>"09-06-1997"];
+    
+    echo json_encode($pessoa);
+});
+
+Route::post('/api', function(Request $request){
+    return "Olá POST, Nome:".$request->input('nome');
+});
+
+Route::put('/api', function(Request $request){
+    return "Olá PUT";
+});
+
+Route::delete('/api', function(Request $request){
+    return "Olá DELETE";
+});
+
+Route::patch('/api', function(Request $request){
+    return "Olá PATCH";
+});
+
+Route::options('/api', function(Request $request){
+    return "Olá OPTIONS";
 });
