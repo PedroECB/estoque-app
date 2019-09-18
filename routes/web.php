@@ -148,6 +148,10 @@ Route::get('/soma/{a}/{b}','MeuControlador@soma')
 
 
 
-// Route::resource('produtos', 'ProdutosController'); // Esse tipo de rota, cria automaticamente uma chamada 
-                                                     //da rota para cada tipo de método HTTP os associando a cada função correspondente
-                                                    // no Controller
+// Route::resource('produtos', 'ProdutosController'); 
+// Esse tipo de rota, cria automaticamente uma chamada 
+//da rota para cada tipo de método HTTP os associando a cada função correspondente
+// no Controller
+
+
+//route('rota.name')  adicionar url da rota na ancora da view
