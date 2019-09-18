@@ -52,3 +52,13 @@ body{
 .product-description{
     font-size: 0.8em;
 }
+
+
+
+                                /* Formulário produto */
+
+.form-label{
+    font-weight: bolder;
+    font-size: 0.9em;
+    margin-bottom: 0px;
+}
