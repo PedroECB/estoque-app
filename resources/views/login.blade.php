@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <link rel="stylesheet" href="css/style.css">
+    {{-- <link rel="stylesheet" href="css/style.css"> {{ asset('') }}--}}
     <link rel="stylesheet" href="css/texts.css">
     <title>Login</title>
   </head>
