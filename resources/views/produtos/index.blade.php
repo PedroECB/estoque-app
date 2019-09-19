@@ -7,13 +7,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     
     <!-- Project CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/texts.css">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <title>EstoqueApp {{$titulo}}</title>
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/texts.css')}}">
+    <link rel="stylesheet" href="{{asset('font-awesome/css/font-awesome.min.css')}}">
+    <title>EstoqueApp Produtos</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                   <ul class="navbar-nav">
                     <li class="nav-item  mr-3">
-                      <a class="nav-link font-weight-bold" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Produtos <span class="sr-only">(Página atual)</span></a>
+                      <a class="nav-link font-weight-bold" href="{{route('produtos.index')}}"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Produtos <span class="sr-only">(Página atual)</span></a>
                     </li>
                     <li class="nav-item mr-3">
                       <a class="nav-link font-weight-bold" href="#"><i class="fa fa-truck" aria-hidden="true"></i> Fornecedores</a>
@@ -64,7 +64,7 @@
                             <div class="container">
                                 <div class="row justify-content-lg-between">
 
-                                    <button class="btn dark-blue btn-sm font-weight-bold text-white"><i class="fa fa-plus"></i> Adicionar</button>
+                                    <a href="{{route('produtos.create')}}"><button class="btn dark-blue btn-sm font-weight-bold text-white"><i class="fa fa-plus"></i> Adicionar</button></a>
                                         
                                         <form action="" method="GET">
                                             <div class="class-search d-flex">           
@@ -173,6 +173,6 @@
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
   </body>
 </html>

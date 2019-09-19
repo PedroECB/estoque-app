@@ -19,7 +19,7 @@ class ProdutosController extends Controller
 
         $titulo = "Produtos";
 
-        return view('produtos.index');
+        return view('produtos.index', ["titulo"=>$titulo]);
     }
 
     /**
@@ -29,7 +29,7 @@ class ProdutosController extends Controller
      */
     public function create()
     {
-        //
+        return view('produtos.create');
     }
 
     /**
@@ -40,7 +40,8 @@ class ProdutosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dados = $request->all();
+        dd($dados);
     }
 
     /**
