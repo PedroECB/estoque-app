@@ -17,9 +17,9 @@ class ProdutosController extends Controller
     public function index()
     {
 
-        $titulo = "Produtos";
+        $title = "Produtos";
 
-        return view('produtos.index', ["titulo"=>$titulo]);
+        return view('produtos.index', ["title"=>$title]);
     }
 
     /**
@@ -29,7 +29,9 @@ class ProdutosController extends Controller
      */
     public function create()
     {
-        return view('produtos.create');
+        $title = "Editar Produto";
+
+        return view('produtos.create',["title"=>$title]);
     }
 
     /**
