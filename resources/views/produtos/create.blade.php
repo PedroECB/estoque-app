@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="img/favicon_io/favicon-32x32.png" alt=""> <span class="teko-font font-weight-bold text-dark-blue">EstoqueApp</span>
+                    <img src="{{asset('img/favicon_io/favicon-32x32.png')}}" alt="EstoqueApp Logo"> <span class="teko-font font-weight-bold text-dark-blue">EstoqueApp</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
                   <span class="navbar-toggler-icon"></span>

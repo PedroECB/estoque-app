@@ -42,6 +42,7 @@ class ProdutosController extends Controller
     {
         $dados = $request->all();
         dd($dados);
+        // dd($dados);
     }
 
     /**
@@ -52,7 +53,7 @@ class ProdutosController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('produtos.show');
     }
 
     /**
