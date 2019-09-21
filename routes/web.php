@@ -155,3 +155,6 @@ Route::get('/soma/{a}/{b}','MeuControlador@soma')
 
 
 //route('rota.name')  adicionar url da rota na ancora da view
+
+
+Route::get('/clientes','ClienteController@index');
