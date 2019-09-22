@@ -26,7 +26,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                   <ul class="navbar-nav">
-                    <li class="nav-item  mr-3">
+                    <li class="nav-item {{request()->routeIs('produtos.index')?'active':''}} mr-3">
                       <a class="nav-link font-weight-bold" href="{{route('produtos.index')}}"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Produtos <span class="sr-only">(Página atual)</span></a>
                     </li>
                     <li class="nav-item mr-3">
@@ -46,7 +46,7 @@
                     </li>
                   </ul>
                 </div>
-        </div>
+        </div>  
       </nav>
                 {{--  Seção de conteúdo  --}}
 
@@ -58,6 +58,8 @@
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    {{-- <script src="{{asset('js/bootstrap.min.js')}}"></script> --}}
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/validation.js')}}"></script>
   </body>
 </html>

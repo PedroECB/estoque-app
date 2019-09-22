@@ -1,6 +1,7 @@
 
 (function(){
 
+
     $inputNfce = document.querySelector('#cNfce')
     $alertNfce = document.querySelector("#alert-nfce")
 

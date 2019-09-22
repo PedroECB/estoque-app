@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', 'UserController@login');
+Route::get('/login', 'UserController@login')->name('login');
 
 
 Route::resource('produtos', 'ProdutosController');
