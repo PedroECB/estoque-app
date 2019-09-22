@@ -1,5 +1,6 @@
 @extends('layout.main')
 
+@section('title','Cadastrar Produto')
 
 @section('content')
 
@@ -110,5 +111,5 @@
     <div class="offset-2"></div>
     </div>
     </div>
-
+    <script src="{{asset('js/validation.js')}}"></script>
     @endsection

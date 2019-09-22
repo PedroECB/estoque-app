@@ -17,7 +17,22 @@ body{
     background-color: #15337f;
 }
 
+/* Resetor do burger-menu */
+.navbar-light .navbar-toggler-icon {
+    /* background-image: url('../img/'); */
+    background-image: url('../img/menu-512.png') !important;
 
+}
+
+.navbar-light .navbar-toggler {
+    /* color: rgba(0,0,0,.5); */
+    border-color: rgba(0,0,0,0);
+}
+
+.navbar-light .navbar-toggler:active{
+    /* color: rgba(0,0,0,.5); */
+    border-color: rgba(0,0,0,0) !important;
+}
 
                                             /* Login */
 

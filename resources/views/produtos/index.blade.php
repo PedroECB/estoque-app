@@ -1,5 +1,6 @@
 @extends('layout.main')
 
+@section('title','Produtos')
 
 @section('content')
                                                     <!-- Tabela de produtos -->

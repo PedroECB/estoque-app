@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
     {{-- <link rel="stylesheet" href="css/style.css"> {{ asset('') }}--}}
     <link rel="stylesheet" href="css/texts.css">
-    <title>Login</title>
+    <title>EstoqueApp | Login</title>
   </head>
   <body>
     <div class="container">

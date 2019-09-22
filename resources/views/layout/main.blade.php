@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/texts.css')}}">
     <link rel="stylesheet" href="{{asset('font-awesome/css/font-awesome.min.css')}}">
-    <title>EstoqueApp {{$title}} </title>
+    <title>EstoqueApp | @yield('title') </title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -23,6 +23,7 @@
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
                   <span class="navbar-toggler-icon"></span>
+                  {{-- <i class="fa fa-th-large"></i> --}}
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                   <ul class="navbar-nav">
@@ -60,6 +61,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     {{-- <script src="{{asset('js/bootstrap.min.js')}}"></script> --}}
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('js/validation.js')}}"></script>
   </body>
 </html>
