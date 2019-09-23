@@ -21,14 +21,17 @@
              
           
           
-          
             <div class="col-md-4">
                 <div class="card login-card pt-4 px-4 pb-4">
                   <div class="icon-login position-relative d-flex justify-content-center">
                       <img src="img/favicon_io/favicon-32x32.png" alt="Icone EstoqueApp" class="img-fluid icone-estoque">
                       <h3 class="teko-font mb-3 text-dark-blue text-center font-weight-bold">EstoqueApp</h3>
                   </div>
-
+                    
+                        @component('components.loginerror')
+                        
+                        @endcomponent
+              
                   <div class="form-group mb-2">
                     <label class="label-text mb-0 teko-font gray-text" for="cLogin">Usuário</label>
                     <input type="text" name="login" maxlength="20" id="cLogin" class="form-control form-control-sm input-login" autofocus>     

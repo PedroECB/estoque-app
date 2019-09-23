@@ -16,6 +16,10 @@
                         Produto</span>
                 </div>
                 <div class="card-body pt-2">
+                        @component('components.testalert', ["autor"=>"Pedro Henrique"])
+                            <p>O presente texto tem o intuito de auxiliar o usuário no manuseio do sistema legado</p>
+                        @endcomponent
+
                     <form action="{{route('produtos.store')}}" method="POST">
                         @csrf
                         <div class="container">
