@@ -22,5 +22,5 @@ Route::get('/login', 'UserController@login')->name('login');
 
 Route::resource('produtos', 'ProdutosController');
 
+Route::resource('fornecedores','FornecedoresController');
 
-Route::resource('colaboradores', 'ColaboradoresController');

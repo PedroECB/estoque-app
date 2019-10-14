@@ -23,7 +23,7 @@ class CreateProdutos extends Migration
             $table->string('cod_barras', 30);
             $table->string('nfce_code', 30);
             $table->integer('quantidade');
-            $table->timestamps();
+            $table->timestamps();    
         });
     }
 
