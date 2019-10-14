@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Fornecedor;
 use Illuminate\Http\Request;
+
 
 class FornecedoresController extends Controller
 {
@@ -13,7 +15,9 @@ class FornecedoresController extends Controller
      */
     public function index()
     {
-        return view('fornecedores.index');
+        $f =  Fornecedor::listAll();
+
+        return view('fornecedores.index', ["fornecedores"=>$f]);
     }
 
     /**
