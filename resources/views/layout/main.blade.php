@@ -30,8 +30,8 @@
                     <li class="nav-item {{request()->routeIs('produtos.index')?'active':''}} mr-3">
                       <a class="nav-link font-weight-bold" href="{{route('produtos.index')}}"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Produtos <span class="sr-only">(Página atual)</span></a>
                     </li>
-                    <li class="nav-item mr-3">
-                      <a class="nav-link font-weight-bold" href="#"><i class="fa fa-truck" aria-hidden="true"></i> Fornecedores</a>
+                    <li class="nav-item {{request()->routeIs('colaboradores.index')?'active':''}} mr-3">
+                      <a class="nav-link font-weight-bold" href="{{route('colaboradores.index')}}"><i class="fa fa-users" aria-hidden="true"></i> Colaboradores</a>
                     </li>
                     <li class="nav-item dropdown mr-3">
                       <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
