@@ -44,7 +44,6 @@ class ProdutosController extends Controller
     {
         $dados = $request->all();
         dd($dados);
-        // dd($dados);
     }
 
     /**

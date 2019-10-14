@@ -36,7 +36,7 @@
 
                                     <div class="form-group mr-1">
                                         <label for="cquantidade" class="form-label">Qnt de entrada: </label>
-                                        <input type="number" id="cquantidade" class="form-control form-control-sm"
+                                        <input type="number" min="1" id="cquantidade" class="form-control form-control-sm"
                                             placeholder="Total em unidades" required>
                                     </div>
 
