@@ -16,14 +16,10 @@
                         Produto</span>
                 </div>
                 <div class="card-body pt-2">
-                        {{--  @component('components.testalert', ["autor"=>"Pedro Henrique"])
+                        @component('components.testalert', ["autor"=>"Pedro Henrique"])
                             <p>O presente texto tem o intuito de auxiliar o usuário no manuseio do sistema legado</p>
-                        @endcomponent  --}}
-                    @if(isset($success))
-                        @component('components.success')
-                            Produto Cadastrado com sucesso
                         @endcomponent
-                    @endif
+
                     <form action="{{route('produtos.store')}}" method="POST">
                         @csrf
                         <div class="container">
@@ -41,12 +37,12 @@
                                     <div class="form-group mr-1">
                                         <label for="cquantidade" class="form-label">Qnt de entrada: </label>
                                         <input type="number" min="1" id="cquantidade" class="form-control form-control-sm"
-                                            name="quantidade" placeholder="Total em unidades" required>
+                                            placeholder="Total em unidades" required>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="cpreco" class="form-label">Valor unidade: </label>
-                                        <input type="text" placeholder="R$" id="cpreco" name="preco"
+                                        <input type="text" placeholder="R$" id="cpreco"
                                             class="form-control form-control-sm w-100" required>
                                     </div>
                                 </div>
@@ -55,9 +51,9 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="cBarras" class="form-label"><i class="fa fa-barcode"
+                                        <label for="cdescricao" class="form-label"><i class="fa fa-barcode"
                                                 aria-hidden="true"></i> Cod. Barras:</label>
-                                        <input type="text" name="cod_barras" id="cBarras" maxlength="1000"
+                                        <input type="text" name="descricao" id="cdescricao" maxlength="1000"
                                             class="form-control form-control-sm" required>
                                         <small class="gray-text">Digite apenas números</small>
                                     </div>

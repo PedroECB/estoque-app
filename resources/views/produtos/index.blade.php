@@ -44,43 +44,8 @@
                                 </thead>
                                                                 <!-- Listagem de produtos -->
                                 <tbody>
-                                    <tr>
-                                        <td class="text-center font-weight-bold teko-font">Iphone X</td>
-                                        <td class="product-description">Iphone X Lançamento, Câmera 8.7mp </td>
-                                        <td class="text-right font-weight-bold ubuntu-font">2.799,00</td>
-                                        <td class="text-center font-weight-bold ubuntu-font">36</td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm"><i class="fa fa-list"></i></button>
-                                            <button class="btn btn-sm"><i class="fa fa-wrench"></i></button>
-                                            <button class="btn btn-danger btn-sm"><i class="fa fa-close"></i></button>
-                                        </td>
-                                    </tr>
 
-                                    <tr>
-                                        <td class="text-center font-weight-bold teko-font">Samsumg Galaxy note 7</td>
-                                        <td class="product-description">Samsumg galaxy note imprevisible com capa de ouro 8GB de RAM </td>
-                                        <td class="text-right font-weight-bold ubuntu-font">1.289,50</td>
-                                        <td class="text-center font-weight-bold ubuntu-font">325</td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm"><i class="fa fa-list"></i></button>
-                                            <button class="btn btn-sm"><i class="fa fa-wrench"></i></button>
-                                            <button class="btn btn-danger btn-sm"><i class="fa fa-close"></i></button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="text-center font-weight-bold teko-font">Fone JBL T110</td>
-                                        <td class="product-description">Fone Jbl t110 slim network </td>
-                                        <td class="text-right font-weight-bold ubuntu-font">89,90</td>
-                                        <td class="text-center font-weight-bold ubuntu-font">12</td>
-                                        <td class="text-center">
-                                            <button class="btn btn-sm"><i class="fa fa-list"></i></button>
-                                            <button class="btn btn-sm"><i class="fa fa-wrench"></i></button>
-                                            <button class="btn btn-danger btn-sm"><i class="fa fa-close"></i></button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
+                                    {{-- <tr>
                                         <td class="text-center font-weight-bold teko-font">Carregador Turbo Apple</td>
                                         <td class="product-description">Carregador Apple TBX 3.4AMP cabo dobrável </td>
                                         <td class="text-right font-weight-bold ubuntu-font">2.799,00</td>
@@ -90,7 +55,21 @@
                                             <button class="btn btn-sm"><i class="fa fa-wrench"></i></button>
                                             <button class="btn btn-danger btn-sm"><i class="fa fa-close"></i></button>
                                         </td>
+                                    </tr> --}}
+
+                                    @foreach ($produtos as $produto)
+                                    <tr>
+                                        <td class="text-center font-weight-bold teko-font">{{$produto->nome}}</td>
+                                        <td class="product-description">{{$produto->descricao}} </td>
+                                        <td class="text-right font-weight-bold ubuntu-font">{{number_format($produto->preco,2,',','.')}}</td>
+                                        <td class="text-center font-weight-bold ubuntu-font">{{$produto->quantidade}}</td>
+                                        <td class="text-center">
+                                            <a title="Visualizar" href="{{route('produtos.show', $produto->id)}}"><button class="btn btn-sm"><i class="fa fa-list"></i></button></a>
+                                            <a title="Editar" href="{{route('produtos.edit', $produto->id)}}"><button class="btn btn-sm"><i class="fa fa-pencil-square-o"></i></button></a>
+                                            <button class="btn btn-danger btn-sm"><i class="fa fa-close"></i></button>
+                                        </td>
                                     </tr>
+                                    @endforeach 
 
                                 </tbody>
 
@@ -120,6 +99,7 @@
             <div class="offset-1"></div>
                 
 
+      
        
         </div>
       </div>
