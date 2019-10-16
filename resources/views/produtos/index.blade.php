@@ -60,13 +60,22 @@
                                     @foreach ($produtos as $produto)
                                     <tr>
                                         <td class="text-center font-weight-bold teko-font">{{$produto->nome}}</td>
-                                        <td class="product-description">{{$produto->descricao}} </td>
+                                        <td class="product-description w-50">{{$produto->descricao}} </td>
                                         <td class="text-right font-weight-bold ubuntu-font">{{number_format($produto->preco,2,',','.')}}</td>
                                         <td class="text-center font-weight-bold ubuntu-font">{{$produto->quantidade}}</td>
                                         <td class="text-center">
                                             <a title="Visualizar" href="{{route('produtos.show', $produto->id)}}"><button class="btn btn-sm"><i class="fa fa-list"></i></button></a>
                                             <a title="Editar" href="{{route('produtos.edit', $produto->id)}}"><button class="btn btn-sm"><i class="fa fa-pencil-square-o"></i></button></a>
-                                            <button class="btn btn-danger btn-sm"><i class="fa fa-close"></i></button>
+                                            
+
+                                            <form style="display:inline;" action="{{route('produtos.destroy', $produto->id)}}" method="POST">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button onclick="return confirm('Deseja realmente excluir esse produto?');" title="Excluir" class="btn btn-danger btn-sm"><i class="fa fa-close"></i></button> 
+                                            </form>
+                                                
+               
+                                            
                                         </td>
                                     </tr>
                                     @endforeach 
@@ -74,6 +83,10 @@
                                 </tbody>
 
                             </table>
+
+
+                            
+
                             <nav aria-label="Page navigation">
                                     <ul class="pagination justify-content-center pagination-sm">
                                       <li class="page-item disabled">

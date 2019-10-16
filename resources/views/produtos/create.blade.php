@@ -106,9 +106,10 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-12 mt-3 d-flex justify-content-end">
+                                <div class="col-md-12 mt-3 d-flex justify-content-between">
                                     <button class="btn btn-sm btn-success font-weight-bold"><i class="fa fa-check"
                                             aria-hidden="true"></i> Cadastrar</button>
+                                            <a class="btn btn-sm btn-light font-weight-bold" href="{{route('produtos.index')}}"><i class="fa fa-arrow-left"></i> Voltar</a>
                                 </div>
 
                             </div>
