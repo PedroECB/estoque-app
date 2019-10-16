@@ -109,9 +109,28 @@ class ProdutosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-       echo "DEsgraçaaaaaaaaaaaaaaaa";
-        exit;
+    {   
+        $dados = $request->all();
+
+        Produto::where('id', $id)->update(
+            ['nome'=>$dados['nome'],
+             'preco'=>(double)$dados['preco'],
+             'descricao'=>$dados['descricao'],
+             'fornecedor'=>$dados['fornecedor'],
+             'data_entrada'=>$dados['dataEntrada'],
+             'cod_barras'=>$dados['codBarras'],
+             'nfce_code'=>$dados['nfce'],
+             'quantidade'=>$dados['quantidade'],
+             'fornecedor_id'=>1
+            ]
+        );
+
+        $produto = Produto::find($id);
+
+        $msg = 'As alterações foram salvas.';
+
+        return view('produtos.edit', ['produto'=>$produto, 'success'=>$msg]);
+        unset($msg);
     }
 
     /**

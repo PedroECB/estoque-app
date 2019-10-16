@@ -20,7 +20,13 @@
                             <p>O presente texto tem o intuito de auxiliar o usuário no manuseio do sistema legado</p>
                         @endcomponent  --}}
 
-                    <form action="{{route('produtos.update', $produto->id)}}" method="put">
+                        @if(isset($success))
+                            @component('components.success')
+                                {{$success}}
+                            @endcomponent
+                        @endif
+
+                    <form action="{{route('produtos.update', $produto->id)}}" method="POST">
                         @csrf
                         @method('put')
                         <div class="container">
@@ -29,7 +35,7 @@
                                     <div class="form-group">
                                         <label for="cproduto" class="form-label"><i class="fa fa-shopping-basket"
                                                 aria-hidden="true"></i> Nome do produto:</label>
-                                        <input type="text" name="produto" id="cproduto" maxlength="20"
+                                        <input type="text" name="nome" id="cproduto" maxlength="20"
                                             class="form-control form-control-sm" value="{{$produto->nome}}" required>
                                     </div>
                                 </div>
@@ -37,13 +43,13 @@
 
                                     <div class="form-group mr-1">
                                         <label for="cquantidade" class="form-label">Qnt de entrada: </label>
-                                        <input type="number" min="1" id="cquantidade" class="form-control form-control-sm"
+                                        <input type="number" min="1" id="cquantidade" name="quantidade" class="form-control form-control-sm"
                                             placeholder="Total em unidades" value="{{$produto->quantidade}}" required>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="cpreco" class="form-label">Valor unidade: </label>
-                                        <input type="text" placeholder="R$" id="cpreco" class="form-control form-control-sm w-100" 
+                                        <input type="text" placeholder="R$" id="cpreco" name="preco" class="form-control form-control-sm w-100" 
                                         value="{{number_format($produto->preco,2,',','.')}}" required>
                                     </div>
                                 </div>
@@ -103,14 +109,15 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-12 mt-3 d-flex justify-content-end">
-                                    <button class="btn btn-sm btn-success font-weight-bold"><i class="fa fa-check"
-                                            aria-hidden="true"></i> Cadastrar</button>
+                                <div class="col-md-12 mt-3 d-flex justify-content-between">
+                                    <button class="btn btn-sm btn-success font-weight-bold"><i class="fa fa-check" aria-hidden="true"></i> Salvar</button>
+                                </form>
+                                <a href="{{route('produtos.index')}}"  class="btn btn-sm btn-light font-weight-bold"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</a>
                                 </div>
 
                             </div>
                         </div>
-                    </form>
+                        
                 </div>
             </div>
     <div class="offset-2"></div>
