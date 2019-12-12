@@ -57,6 +57,10 @@
                                         </td>
                                     </tr> --}}
 
+                                    @if(empty($produtos))
+                                        <h3 class="text-center text-info">Nenhum produto cadastrado</h3>
+                                    @endif
+                                    
                                     @foreach ($produtos as $produto)
                                     <tr>
                                         <td class="text-center font-weight-bold teko-font">{{$produto->nome}}</td>

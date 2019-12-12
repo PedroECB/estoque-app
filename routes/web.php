@@ -15,9 +15,9 @@
 //     return view('welcome');
 // });
 
-Route::get('/','UserController@home');
+// Route::get('/','UserController@home');
 
-Route::get('/login', 'UserController@login')->name('login');
+// Route::get('/login', 'UserController@login')->name('login');
 
 
 Route::resource('produtos', 'ProdutosController');
