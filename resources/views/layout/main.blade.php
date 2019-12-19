@@ -42,7 +42,11 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#"><i class="fa fa-gear"></i> Alterar senha</a>
                         <a class="dropdown-item" href="#"><i class="fa fa-user-plus"></i> Novo colaborador</a>
-                        <a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Sair</a>
+                        
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                          @csrf
+                          <button class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Sair</button>
+                      </form>
                       </div>
                     </li>
                   </ul>
