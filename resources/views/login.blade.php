@@ -28,9 +28,9 @@
                       <h3 class="teko-font mb-3 text-dark-blue text-center font-weight-bold">EstoqueApp</h3>
                   </div>
                     
-                        @component('components.loginerror')
+                        {{--  @component('components.loginerror')
                         
-                        @endcomponent
+                        @endcomponent  --}}
               
                   <div class="form-group mb-2">
                     <label class="label-text mb-0 teko-font gray-text" for="cLogin">Usuário</label>
