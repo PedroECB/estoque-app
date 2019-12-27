@@ -24,6 +24,15 @@
                             Produto Cadastrado com sucesso
                         @endcomponent
                     @endif
+                    
+                    {{--  @if($errors->any())
+                        <div class="alert alert-danger">
+                            @foreach ($errors->all() as $message)
+                                {{$message}}<br>
+                            @endforeach
+                        </div>
+                    @endif  --}}
+
                     <form action="{{route('produtos.store')}}" method="POST">
                         @csrf
                         <div class="container">
@@ -33,21 +42,31 @@
                                         <label for="cproduto" class="form-label"><i class="fa fa-shopping-basket"
                                                 aria-hidden="true"></i> Nome do produto:</label>
                                         <input type="text" name="produto" id="cproduto" maxlength="20"
-                                            class="form-control form-control-sm" autofocus required>
-                                    </div>
+                                            class="form-control form-control-sm" value="{{old('produto')}}" autofocus>
+                                            @error('produto')
+                                                <small class="text-danger"><i class="fa fa-close"></i> {{$message}}</small>
+                                            @enderror
+                                        </div>
                                 </div>
                                 <div class="col-md-6 d-flex justify-content-between">
 
                                     <div class="form-group mr-1">
                                         <label for="cquantidade" class="form-label">Qnt de entrada: </label>
                                         <input type="number" min="1" id="cquantidade" class="form-control form-control-sm"
-                                            name="quantidade" placeholder="Total em unidades" required>
+                                            name="quantidade" placeholder="Total em unidades" value="{{old('quantidade')}}">
+                                            @if($errors->has('quantidade'))
+                                                
+                                                <small class="text-danger"><i class="fa fa-close"></i> {{$errors->first('quantidade')}}</small>
+                                            @endif
                                     </div>
 
                                     <div class="form-group">
                                         <label for="cpreco" class="form-label">Valor unidade: </label>
                                         <input type="text" placeholder="R$" id="cpreco" name="preco"
-                                            class="form-control form-control-sm w-100" required>
+                                            class="form-control form-control-sm w-100" value="{{old('preco')}}">
+                                            @if($errors->has('preco'))
+                                                <small class="text-danger"><i class="fa fa-close"></i> {{$errors->first('preco')}}</small>
+                                            @endif
                                     </div>
                                 </div>
                             </div>
@@ -58,8 +77,11 @@
                                         <label for="cBarras" class="form-label"><i class="fa fa-barcode"
                                                 aria-hidden="true"></i> Cod. Barras:</label>
                                         <input type="text" name="cod_barras" id="cBarras" maxlength="1000"
-                                            class="form-control form-control-sm" required>
+                                            class="form-control form-control-sm" value="{{old('cod_barras')}}">
                                         <small class="gray-text">Digite apenas números</small>
+                                        @error('cod_barras')
+                                            <small class="text-danger"><i class="fa fa-close"> {{$message}}</i></small>
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -81,7 +103,10 @@
                                         <label for="cdataentrada" class="form-label"><i class="fa fa-calendar"
                                                 aria-hidden="true"></i> Data entrada:</label>
                                         <input class="form-control form-control-sm" type="date" name="dataEntrada"
-                                            id="cdataentrada">
+                                            id="cdataentrada" value="{{old('dataEntrada')}}">
+                                            @error('dataEntrada')
+                                                <small class="text-danger"><i class="fa fa-close"></i> {{$message}}</small>
+                                            @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -89,9 +114,10 @@
                                         <label for="cNfce" class="form-label"><i class="fa fa-qrcode"
                                                 aria-hidden="true"></i> Cód. NFC-e</label>
                                         <input type="text" name="nfce" id="cNfce" class="form-control form-control-sm"
-                                            placeholder="XXXXXX-XX" maxlength="9">
-                                        <small class="alert-small text-danger d-none font-weight-bold"
-                                            id="alert-nfce">Código inválido</small>
+                                            placeholder="XXXXXX-XX" maxlength="9" value="{{old('nfce')}}">
+                                            @error('nfce')
+                                            <small class="text-danger"><i class="fa fa-close"></i> {{$message}}</small>
+                                            @enderror
                                     </div>
                                 </div>
 
